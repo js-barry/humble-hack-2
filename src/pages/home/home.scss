@@ -47,11 +47,42 @@ page-home {
         }
     }
 
+    .medals {
+        width: 100%;
+        background-color: color($colors, light2);
+        overflow: auto;
+        white-space: nowrap;
+
+        div {
+            background-color: rgba(0, 0, 0, 0);
+            width:20%;
+            display: inline-block;
+            margin:0px -2px;
+            font-size:40px;
+            text-align: center;
+            padding: 10px 0px;
+
+            p {
+                margin: 0px;
+                padding:0px;
+                color:color($colors, dark);
+                font-size:10px;
+            }
+        }
+
+        .notAchieved *{
+            opacity: 0.3;
+        }
+    }
+
     .startButton {
         width:70%;
-        margin:15px auto;
+        position: absolute;
+        bottom:20px;
+        left:15%;
         
         button {
+            border-radius:10px;
             min-height:40px;
         }
     }
