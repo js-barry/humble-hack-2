@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title centered>
+            My Places
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+    <ion-card>
+        <img src="../../assets/imgs/montreal.jpg"/>
+        <div class="card-title">Montreal</div>
+    </ion-card>
+
+    <ion-card>
+        <img src="../../assets/imgs/london.jpg"/>
+        <div class="card-title">London</div>
+    </ion-card>
+
+    <ion-card>
+        <img src="../../assets/imgs/chicago.jpg"/>
+        <div class="card-title">Chicago</div>
+    </ion-card>
+
+    <ion-card>
+        <img src="../../assets/imgs/seattle.jpg"/>
+        <div class="card-title">Seattle</div>
+    </ion-card>
+
+</ion-content>
+
+<ion-footer no-border>
+    <div style="display: flex; flex: 1; justify-content: center">
+        <button ion-button outline icon-left small (click)="presentPlacesChooserModal();">
+            <ion-icon name="add-circle"></ion-icon>
+            Add a place
+        </button>
+    </div>
+</ion-footer>
