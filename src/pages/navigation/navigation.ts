@@ -3,9 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { PlacesPage } from '../places/places'
 import { HomePage } from '../home/home'
-import {ExpediansPage} from "../expedians/expedians";
-import {AffinitiesPage} from "../affinities/affinities";
-import {BadgesPage} from "../badges/badges";
+import { ExpediansPage } from "../expedians/expedians";
+import { AffinitiesPage } from "../affinities/affinities";
+import { BadgesPage } from "../badges/badges";
 
 /**
  * Generated class for the NavigationPage page.

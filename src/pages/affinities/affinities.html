@@ -1,18 +1,10 @@
-<!--
-  Generated template for the AffinitiesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>affinities</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <div class="header">
+    <h1>My Affinities</h1>
+  </div>
+  <div class="affinities">
+    <ion-chip *ngFor="let affinity of totalAffinities" (click)="affinityClicked(affinity)" [ngClass]="{selected: affinity.selected, unselected: !affinity.selected}">
+      <ion-label>{{affinity.name}}</ion-label>
+    </ion-chip>
+  </div>
 </ion-content>
