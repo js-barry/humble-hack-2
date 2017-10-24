@@ -24,18 +24,17 @@ export class PlacesPopoverPage {
 
   allDestinations: Destination[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-              private http: HttpClient) {
+  constructor(public navParams: NavParams, public viewCtrl: ViewController, private http: HttpClient) {
 
-    http.get("https://834lpxmozh.execute-api.us-east-1.amazonaws.com/Prod/cities")
-        .subscribe(data => {
-          this.allDestinations = data['results'];
-        });
+    // this.http.get("https://834lpxmozh.execute-api.us-east-1.amazonaws.com/Prod/cities")
+    //     .subscribe(data => {
+    //       this.allDestinations = data['results'];
+    //     });
     
-    // this.allDestinations = [new Destination(1, "montreal", "../../assets/imgs/montreal.jpg", false;),
-    //   new Destination(2, "chicago", "../../assets/imgs/chicago.jpg", false),
-    //   new Destination(3, "seattle", "../../assets/imgs/seattle.jpg"),
-    //   new Destination(4, "london", "../../assets/imgs/london.jpg")];
+    this.allDestinations = [new Destination(1, "montreal", "../../assets/imgs/montreal.jpg", false),
+      new Destination(2, "chicago", "../../assets/imgs/chicago.jpg", false),
+      new Destination(3, "seattle", "../../assets/imgs/seattle.jpg", false),
+      new Destination(4, "london", "../../assets/imgs/london.jpg", false)];
 
     var userDestinations = navParams.get('userDestinations');
     var array = _.map(this.allDestinations, "id");
