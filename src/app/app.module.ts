@@ -6,20 +6,30 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PlacesPage } from '../pages/places/places';
+import { PlacesPopoverPage } from '../pages/places-popover/places-popover';
+
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PlacesPage,
+    PlacesPopoverPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PlacesPage,
+    PlacesPopoverPage
   ],
   providers: [
     StatusBar,
