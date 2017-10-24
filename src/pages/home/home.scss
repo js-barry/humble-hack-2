@@ -1,3 +1,143 @@
 page-home {
+    .header {
+        width:100%;
+        background-color: color($colors, primary);
+        padding:30px 10px;
+        box-shadow: 0px 0px 10px rgb(150,150,150);
+        position:relative;
+        z-index:2;
 
+        .profilePic {
+            width:35%;
+            border-radius:100px;
+            border:2px color($colors, light) solid;
+            margin:0 auto;
+            overflow:hidden;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width:100%;
+            }
+        }
+
+        .profilePic:before {
+            content: "";
+            display: block;
+            padding-top: 100%;  /* ratio of 1:1*/
+        }
+
+        table {
+            width:100%;
+            margin: 0px 0px 20px 0px;
+        
+            td {
+                width:30%;
+                position:relative;
+                top:0px;
+                text-align: center;
+                padding:5px;
+
+                p {
+                    margin:0px;
+                    padding:0px;
+                    font-size:15px;
+                    color:color($colors, light2);
+                }
+
+                .subHeader {
+                    color:color($colors, light);
+                    font-size:17px;
+                }
+
+                .name {
+                    font-size:20px;
+                }
+            }
+
+            .middle {
+                width:40%;
+                top:20px;
+            }
+        }
+    }
+
+    .medals {
+        width: 100%;
+        background-color: #f8f8f8;
+        overflow: auto;
+        white-space: nowrap;
+        z-index: 1;
+        box-shadow: 0px -1px 6px rgb(150, 150, 150);
+
+        div {
+            background-color: rgba(0, 0, 0, 0);
+            width:25%;
+            display: inline-block;
+            margin:0px -2px;
+            font-size:40px;
+            text-align: center;
+            padding: 5px 5px;
+
+            div {
+                width:100%;
+            }
+
+            p {
+                margin: 0px;
+                padding:0px;
+                color:color($colors, dark);
+                font-size:11px;
+            }
+
+            .points {
+                font-size:13px;
+            }
+        }
+
+        ion-icon {
+            text-shadow: 0px 0px 20px white;
+        }
+
+        .gold {
+            color:gold;
+        }
+
+        .silver {
+            color:silver;
+        }
+
+        .bronze {
+            color:rgb(163, 79, 45);
+        }
+
+        .notAchieved {
+            *{
+                color:white;
+                text-shadow: 0px 0px 10px gray;
+            }
+
+            p {
+                color:#222;
+                text-shadow: none;
+            }
+        }
+    }
+
+    .startButton {
+        width:70%;
+        position: absolute;
+        bottom:20px;
+        left:15%;
+        
+        button {
+            border-radius:10px;
+            min-height:80px;
+            font-size: 30px;
+        }
+    }
 }

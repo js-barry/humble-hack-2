@@ -1,18 +1,40 @@
-<!--
-  Generated template for the HomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>home</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <div class="header">
+    <div class="profilePic">
+      <img id="profilePic" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/p/4/005/09b/3bc/0724d3f.jpg">
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <p id="subHeader">Rank</p>
+            <p>
+              <span id="rankPersonal"></span> of
+              <span id="rankTotal"></span>
+            </p>
+          </td>
+          <td class="middle">
+            <p id="name" class="name"></p>
+          </td>
+          <td>
+            <p id="subHeader">Score</p>
+            <p>
+              <span id="points"></span> points</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="medals" class="medals">
+    <div *ngFor="let medal of medals">
+      <div class="{{medal.class}}">
+        <ion-icon ios="ios-trophy" md="md-trophy"></ion-icon>
+        <p>{{medal.name}}</p>
+        <p class="points">{{medal.points}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="startButton">
+    <button ion-button block color="secondary">Start</button>
+  </div>
 </ion-content>
