@@ -1,0 +1,18 @@
+<ion-content padding class="card-background-page">
+    <ion-list-header>
+        <button ion-button icon-only (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-list-header>
+    <ion-list>
+        <ion-card *ngFor="let destination of allDestinations" (click)="toggleSelected(destination)">
+            <img src="{{destination.imgUrl}}"/>
+            <div class="card-title">{{destination.name}}</div>
+            <button ion-button icon-right clear small
+                    class="floating-button"
+                    [hidden]="!destination.selected">
+                <ion-icon name="checkmark-circle"></ion-icon>
+            </button>
+        </ion-card>
+    </ion-list>
+</ion-content>
