@@ -1,20 +1,4 @@
 page-affinities {
-    .header {
-        width:100%;
-        background-color: color($colors, primary);
-        padding:20px 0px;
-        box-shadow: 0px 0px 10px rgb(150,150,150);
-        position:relative;
-        z-index:2;
-        text-align: center;
-
-        h1 {
-            color:color($colors, light);
-            margin:0px;
-            padding:0px;
-        }
-    }
-
     .affinities {
         padding:10px;
         text-align: center;

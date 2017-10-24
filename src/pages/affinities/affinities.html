@@ -1,7 +1,9 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Affinities</ion-title>
+  </ion-navbar>
+</ion-header>
 <ion-content>
-  <div class="header">
-    <h1>My Affinities</h1>
-  </div>
   <div class="affinities">
     <ion-chip *ngFor="let affinity of totalAffinities" (click)="affinityClicked(affinity)" [ngClass]="{selected: affinity.selected, unselected: !affinity.selected}">
       <ion-label>{{affinity.name}}</ion-label>
