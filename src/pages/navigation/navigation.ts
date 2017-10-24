@@ -3,9 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { PlacesPage } from '../places/places'
 import { HomePage } from '../home/home'
-import { ExpediansPage } from "../expedians/expedians";
-import { AffinitiesPage } from "../affinities/affinities";
-import { BadgesPage } from "../badges/badges";
+import {ExpediansPage} from "../expedians/expedians";
+import {AffinitiesPage} from "../affinities/affinities";
 
 /**
  * Generated class for the NavigationPage page.
@@ -25,15 +24,13 @@ export class NavigationPage {
   tab2: any;
   tab3: any;
   tab4: any;
-  tab5: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.tab1 = HomePage;
     this.tab2 = AffinitiesPage;
     this.tab3 = PlacesPage;
-    this.tab4 = BadgesPage;
-    this.tab5 = ExpediansPage;
+    this.tab4 = ExpediansPage;
   }
 
   ionViewDidLoad() {

@@ -1,12 +1,12 @@
 export class UserInfo {
-    private cities: string[];
-    private score: number;
-    private affinities: string[];
-    private name: string;
+    public cities: string[];
+    public score: number;
+    public affinities: string[];
+    public name: string;
 
     constructor(jsonObj: any) {
         this.cities = jsonObj.cities;
-        this.score = jsonObj.score;
+        this.score = jsonObj.score.points;
         this.affinities = jsonObj.affinities;
         this.name = jsonObj.name;
     }

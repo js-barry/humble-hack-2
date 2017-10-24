@@ -1,6 +1,6 @@
 export class UserPoints {
-    private personal: number;
-    private total: number;
+    public personal: number;
+    public total: number;
 
     constructor(jsonObj: any) {
         this.personal = jsonObj.personal;

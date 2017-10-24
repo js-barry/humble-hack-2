@@ -9,17 +9,17 @@
           <td>
             <p id="subHeader">Rank</p>
             <p>
-              <span id="rankPersonal"></span> of
-              <span id="rankTotal"></span>
+              <span>{{userPoints?.personal}}</span> of
+              <span>{{userPoints?.getTotal()}}</span>
             </p>
           </td>
           <td class="middle">
-            <p id="name" class="name"></p>
+            <p class="name">{{user?.id}}</p>
           </td>
           <td>
             <p id="subHeader">Score</p>
             <p>
-              <span id="points"></span> points</p>
+              <span> {{user?.info.score}}</span> points</p>
           </td>
         </tr>
       </tbody>

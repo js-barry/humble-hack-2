@@ -1,8 +1,8 @@
 import { UserInfo } from './userInfo';
 
 export class User {
-    private id: string;
-    private info: UserInfo;
+    public id: string;
+    public info: UserInfo;
 
     constructor(jsonObj: any) {
         this.id = jsonObj.id;

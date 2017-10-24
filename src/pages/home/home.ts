@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { UserPoints } from '../../models/userPoints';
 import { IonicPage, NavController } from 'ionic-angular';
+import {UserProvider} from "../../providers/user/user";
 
 /**
  * Generated class for the HomePage page.
@@ -21,10 +22,11 @@ export class HomePage {
 
   medals: any[];
 
-  constructor(public navCtrl: NavController) {
-    this.user = new User(
-      JSON.parse('{"id":"anmishra","info":{"name":"Ankita Mishra","cities":["4005","829"],"score":20,"affinities":["architecture","museum"],"badges":[]}}')
-    );
+  constructor(public navCtrl: NavController, private userProvider: UserProvider) {
+
+    userProvider.getCurrentUser().subscribe(user => {
+      this.user = user;
+    });
 
     this.userPoints = new UserPoints(
       JSON.parse('{"personal":1,"total":1000}')
@@ -59,11 +61,4 @@ export class HomePage {
     ];
   }
 
-  ngAfterContentInit() {
-    console.log(document.getElementById("name"));
-    document.getElementById("name").textContent = this.user.getInfo().getName();
-    document.getElementById("rankPersonal").textContent = this.userPoints.getPersonal().toString();
-    document.getElementById("rankTotal").textContent = this.userPoints.getTotal().toString();
-    document.getElementById("points").textContent = this.user.getInfo().getScore().toString();
-  }
 }
