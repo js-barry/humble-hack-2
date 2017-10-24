@@ -29,5 +29,13 @@
     right: 0%;
     color: greenyellow;
   }
+
+  .selected {
+    filter : grayscale(10%) brightness(100%);
+  }
+
+  .unselected {
+    filter : grayscale(100%) brightness(50%);
+  }
 }
 
