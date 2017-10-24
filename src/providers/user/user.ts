@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {ApiServiceProvider} from "../api-service/api-service";
+import {User} from "../../models/user";
+import {Observable} from "rxjs/Observable";
+
+
 
 /*
   Generated class for the UserProvider provider.
@@ -11,8 +15,20 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserProvider {
 
-  constructor(public http: Http) {
-    console.log('Hello UserProvider Provider');
+  currentUser : User;
+  constructor(private apiServiceProvider : ApiServiceProvider) {
+
+    apiServiceProvider.get('/users/anmishra/').subscribe(data => {
+
+      this.currentUser = new User(data);
+      console.log("hello")
+    })
+
+  }
+
+  getCurrentUser(): Observable<User> {
+    return this.apiServiceProvider.get('/users/anmishra/')
+        .map(userData => new User(userData));
   }
 
 }

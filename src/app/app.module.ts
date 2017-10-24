@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ExpediansPage} from "../pages/expedians/expedians";
 import {AffinitiesPage} from "../pages/affinities/affinities";
 import { UserProvider } from '../providers/user/user';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { UserProvider } from '../providers/user/user';
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    ApiServiceProvider
     ]
 })
 export class AppModule {

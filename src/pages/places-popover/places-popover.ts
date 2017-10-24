@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams } from 'ionic-angular';
 
 import {ViewController } from 'ionic-angular';
 import {Destination} from "../../models/destination";
@@ -26,21 +26,21 @@ export class PlacesPopoverPage {
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController, private http: HttpClient) {
 
-    // this.http.get("localhost:8100/cities")
-    //     .subscribe(data => {
-    //       console.log(data['results']);
-    //     });
-    
-    this.allDestinations = [new Destination(1, "montreal", "../../assets/imgs/montreal.jpg", false),
-      new Destination(2, "chicago", "../../assets/imgs/chicago.jpg", false),
-      new Destination(3, "seattle", "../../assets/imgs/seattle.jpg", false),
-      new Destination(4, "london", "../../assets/imgs/london.jpg", false)];
+    this.allDestinations = [];
+    this.http.get("https://h5l74qtt9e.execute-api.us-east-1.amazonaws.com/Prod/cities")
+        .subscribe((data: any[]) => {
 
-    var userDestinations = navParams.get('userDestinations');
-    var array = _.map(this.allDestinations, "id");
-    var values = _.map(userDestinations, "id");
-    var diff : any[]= _.difference(array, values);
-    this.allDestinations = _.filter(this.allDestinations, function(obj) { return diff.indexOf(obj.id) >= 0; });
+          data.forEach(city => {
+            this.allDestinations.push(new Destination(city.id, city.info.name, city.info.image, false))
+          })
+          console.log(data);
+          var userDestinations = navParams.get('userDestinations');
+          var array = _.map(this.allDestinations, "id");
+          var values = _.map(userDestinations, "id");
+          var diff : any[]= _.difference(array, values);
+          this.allDestinations = _.filter(this.allDestinations, function(obj) { return diff.indexOf(obj.id) >= 0; });
+        });
+
   }
 
   ionViewDidLoad() {
