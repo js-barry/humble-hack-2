@@ -6,23 +6,32 @@
     <table>
       <tbody>
         <tr>
-          <td id="rank">
-            rank
+          <td>
+            <p id="subHeader">Rank</p>
+            <p>
+              <span id="rankPersonal"></span> of
+              <span id="rankTotal"></span>
+            </p>
           </td>
-          <td class="middle" id="name">
-            name
+          <td class="middle">
+            <p id="name" class="name"></p>
           </td>
-          <td id="points">
-            points
+          <td>
+            <p id="subHeader">Score</p>
+            <p>
+              <span id="points"></span> points</p>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
   <div id="medals" class="medals">
-    <div>
-      <ion-icon ios="ios-medal" md="md-medal"></ion-icon>
-      <p>medalName</p>
+    <div *ngFor="let medal of medals">
+      <div class="{{medal.class}}">
+        <ion-icon ios="ios-trophy" md="md-trophy"></ion-icon>
+        <p>{{medal.name}}</p>
+        <p class="points">{{medal.points}}</p>
+      </div>
     </div>
   </div>
   <div class="startButton">
