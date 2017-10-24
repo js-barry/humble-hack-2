@@ -1,14 +1,14 @@
 <ion-content padding class="card-background-page">
-    <ion-list-header>
-        <button ion-button icon-only (click)="dismiss()">
-            <ion-icon name="close"></ion-icon>
-        </button>
-    </ion-list-header>
     <ion-list>
         <ion-card *ngFor="let destination of allDestinations" (click)="toggleSelected(destination)">
-            <img src="{{destination.imgUrl}}"
-                 [ngClass]="{selected: destination.selected, unselected: !destination.selected}"/>
+            <img src="{{destination.imgUrl}}" [ngClass]="{selected: destination.selected, unselected: !destination.selected}" />
             <div class="card-title">{{destination.name}}</div>
         </ion-card>
     </ion-list>
+    <div class="closeButton">
+        <button ion-button (click)="dismiss()">
+            Done
+            <ion-icon name="done-all"></ion-icon>
+        </button>
+    </div>
 </ion-content>

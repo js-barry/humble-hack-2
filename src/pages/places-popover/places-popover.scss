@@ -37,5 +37,14 @@
   .unselected {
     filter : grayscale(100%) brightness(50%);
   }
+
+  .closeButton {
+    width:100%;
+    background-color:transparent;
+    position:fixed;
+    bottom:20px;
+    left:0px;
+    text-align:center;
+  }
 }
 
