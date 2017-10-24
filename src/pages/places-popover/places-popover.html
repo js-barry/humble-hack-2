@@ -6,13 +6,9 @@
     </ion-list-header>
     <ion-list>
         <ion-card *ngFor="let destination of allDestinations" (click)="toggleSelected(destination)">
-            <img src="{{destination.imgUrl}}"/>
+            <img src="{{destination.imgUrl}}"
+                 [ngClass]="{selected: destination.selected, unselected: !destination.selected}"/>
             <div class="card-title">{{destination.name}}</div>
-            <button ion-button icon-right clear small
-                    class="floating-button"
-                    [hidden]="!destination.selected">
-                <ion-icon name="checkmark-circle"></ion-icon>
-            </button>
         </ion-card>
     </ion-list>
 </ion-content>
