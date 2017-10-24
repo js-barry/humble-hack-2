@@ -26,15 +26,15 @@ export class PlacesPopoverPage {
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController, private http: HttpClient) {
 
-    this.http.get("localhost:8100/cities")
-        .subscribe(data => {
-          console.log(data['results']);
-        });
+    // this.http.get("localhost:8100/cities")
+    //     .subscribe(data => {
+    //       console.log(data['results']);
+    //     });
     
-    // this.allDestinations = [new Destination(1, "montreal", "../../assets/imgs/montreal.jpg", false),
-    //   new Destination(2, "chicago", "../../assets/imgs/chicago.jpg", false),
-    //   new Destination(3, "seattle", "../../assets/imgs/seattle.jpg", false),
-    //   new Destination(4, "london", "../../assets/imgs/london.jpg", false)];
+    this.allDestinations = [new Destination(1, "montreal", "../../assets/imgs/montreal.jpg", false),
+      new Destination(2, "chicago", "../../assets/imgs/chicago.jpg", false),
+      new Destination(3, "seattle", "../../assets/imgs/seattle.jpg", false),
+      new Destination(4, "london", "../../assets/imgs/london.jpg", false)];
 
     var userDestinations = navParams.get('userDestinations');
     var array = _.map(this.allDestinations, "id");

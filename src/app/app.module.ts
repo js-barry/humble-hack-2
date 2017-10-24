@@ -11,7 +11,6 @@ import {NavigationPage} from '../pages/navigation/navigation';
 import {PlacesPopoverPage} from '../pages/places-popover/places-popover';
 
 import {HttpClientModule} from '@angular/common/http';
-import {BadgesPage} from "../pages/badges/badges";
 import {ExpediansPage} from "../pages/expedians/expedians";
 import {AffinitiesPage} from "../pages/affinities/affinities";
 import { UserProvider } from '../providers/user/user';
@@ -24,7 +23,6 @@ import { UserProvider } from '../providers/user/user';
         PlacesPage,
         PlacesPopoverPage,
         NavigationPage,
-        BadgesPage,
         ExpediansPage,
         AffinitiesPage
     ],
@@ -40,7 +38,6 @@ import { UserProvider } from '../providers/user/user';
         PlacesPage,
         PlacesPopoverPage,
         NavigationPage,
-        BadgesPage,
         ExpediansPage,
         AffinitiesPage
     ],
