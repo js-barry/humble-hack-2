@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 import { UserProvider } from "../../providers/user/user";
-import { ApiServiceProvider } from "../../providers/api-service/api-service";
 
 /**
  * Generated class for the AffinitiesPage page.
@@ -18,7 +17,7 @@ import { ApiServiceProvider } from "../../providers/api-service/api-service";
 export class AffinitiesPage {
   totalAffinities: Affinity[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private userProvider: UserProvider) {
+  constructor(private userProvider: UserProvider) {
     this.totalAffinities = new Array();
     userProvider.getAffinities().subscribe(affinities => {
       affinities.forEach((affinity) => {

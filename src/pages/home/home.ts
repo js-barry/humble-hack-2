@@ -20,15 +20,13 @@ import {GamePage} from "../game/game";
 export class HomePage {
   private user: User;
   private userRank: UserPoints;
-  private cities: Map<number, { name: string, url: string }>;
-
 
   medals: any[];
 
   constructor(public navCtrl: NavController, private userProvider: UserProvider, public modalCtrl: ModalController) {
     this.medals = new Array();
 
-    userProvider.getCurrentUser().subscribe(user => {
+    this.userProvider.getCurrentUser().subscribe(user => {
       this.user = user;
 
       for (let key in user.getInfo().getScore().getAffinities()) {

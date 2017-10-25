@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {ApiServiceProvider} from "../../providers/api-service/api-service";
-import {User} from "../../models/user";
 import {NavigationPage} from "../navigation/navigation";
 
 /**
@@ -26,7 +25,7 @@ export class GamePage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiService : ApiServiceProvider,
-  private modalCtrl : ModalController, public viewCtrl: ViewController) {
+              public viewCtrl: ViewController) {
 
     apiService.get("/users/anmishra/question").subscribe(q => {
 

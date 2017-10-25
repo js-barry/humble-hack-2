@@ -5,10 +5,12 @@
             <div class="card-title">{{destination.name}}</div>
         </ion-card>
     </ion-list>
-    <div class="closeButton">
-        <button ion-button (click)="dismiss()">
+
+
+    <div style="display: flex; flex: 1; justify-content: center" class="closeButton">
+        <button ion-button outline icon-left small (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
             Done
-            <ion-icon name="done-all"></ion-icon>
         </button>
     </div>
 </ion-content>

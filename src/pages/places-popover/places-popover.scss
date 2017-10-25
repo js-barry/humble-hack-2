@@ -40,7 +40,9 @@
 
   .closeButton {
     width:100%;
-    background-color:transparent;
+    button {
+      background-color:color($colors, light);
+    }
     position:fixed;
     bottom:20px;
     left:0px;

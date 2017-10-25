@@ -28,7 +28,7 @@ export class PlacesPopoverPage {
 
     this.allDestinations = [];
 
-    userProvider.getCities().subscribe(cities => {
+    this.userProvider.getCities().subscribe(cities => {
       cities.forEach(city => {
         this.allDestinations.push(new Destination(city.id,
           userProvider.cities.get(Number.parseInt(city.id)).name,
