@@ -7,41 +7,47 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title></ion-title>
+        <ion-title>
+            Question
+        </ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
     <ion-header>
-        <h2>
+        <h2 class="question">
             Places in {{cityName}} for {{affinity}}
         </h2>
     </ion-header>
 
     <div class="spacer" style="height: 80px;"></div>
 
-    <ion-item *ngFor="let feature of features" (click)="toggleSelected(feature)">
-        <ion-label style="padding: 10px;">
+    <ion-item *ngFor="let feature of features" (click)="toggleSelected(feature)" class="answer">
+        <ion-label style="padding: 10px;" [ngClass]="{selected: feature.selected}">
             <ion-icon name="camera"></ion-icon>
             {{feature?.name}}
         </ion-label>
     </ion-item>
 
-    <div style="display: flex; flex: 1; justify-content: center" class="addPlaceButton">
+    <div style="display: flex; flex: 1; justify-content: center" class="addPlaceButton bottomButtons">
         <button ion-button outline icon-left small (click)="nextQuestion();">
-            Next Question :)
+            Submit
         </button>
 
-        <button ion-button outline icon-left small (click)="done();">
-            Done
-        </button>
 
         <button ion-button outline icon-left small (click)="skip();">
             Skip
         </button>
+    </div>
+
+    <div style="display: flex; flex: 1; justify-content: center" class="addPlaceButton bottomButtons bottomButtons2">
+        <button ion-button outline icon-left small (click)="done();">
+            Finished for now!
+        </button>
+
     </div>
 
     <div style="display: flex; flex: 1; justify-content: center">
