@@ -17,7 +17,7 @@
 
     <ion-header>
         <h2>
-            Best {{affinity}} in {{cityName}}
+            Places in {{cityName}} for {{affinity}}
         </h2>
     </ion-header>
 
@@ -34,5 +34,17 @@
         <button ion-button outline icon-left small (click)="nextQuestion();">
             Next Question :)
         </button>
+
+        <button ion-button outline icon-left small (click)="done();">
+            Done
+        </button>
+
+        <button ion-button outline icon-left small (click)="skip();">
+            Skip
+        </button>
+    </div>
+
+    <div style="display: flex; flex: 1; justify-content: center">
+
     </div>
 </ion-content>
