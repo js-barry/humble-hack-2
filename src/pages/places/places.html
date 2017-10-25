@@ -7,27 +7,10 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-
-    <ion-card>
-        <img src="../../assets/imgs/montreal.jpg" />
-        <div class="card-title">Montreal</div>
+    <ion-card *ngFor="let userCity of userCities">
+        <img src="{{userCity.url}}" />
+        <div class="card-title">{{userCity.name}}</div>
     </ion-card>
-
-    <ion-card>
-        <img src="../../assets/imgs/london.jpg" />
-        <div class="card-title">London</div>
-    </ion-card>
-
-    <ion-card>
-        <img src="../../assets/imgs/chicago.jpg" />
-        <div class="card-title">Chicago</div>
-    </ion-card>
-
-    <ion-card>
-        <img src="../../assets/imgs/seattle.jpg" />
-        <div class="card-title">Seattle</div>
-    </ion-card>
-
 </ion-content>
 
 <div style="display: flex; flex: 1; justify-content: center" class="addPlaceButton">

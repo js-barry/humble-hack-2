@@ -1,16 +1,31 @@
 page-affinities {
     .affinities {
-        padding:10px;
+        padding:10px 0px;
         text-align: center;
 
         ion-chip {
-            margin-left:5px;
-            margin-right:5px;
-        }
-    }
+            margin-left:7px;
+            margin-right:7px;
 
-    .selected {
-        background-color:color($colors, primary);
-        color:white;
+            ion-label {
+                p {
+                    margin:0px;
+                    padding:0px;
+                }
+            }
+        }
+
+        .selected {
+            background-color:color($colors, secondary);
+            p {
+                color:color($colors, primary);
+                font-weight:bold;
+            }
+        }
+
+        .hiddenLabel {
+            opacity: 0;
+            font-weight:bold;
+        }
     }
 }

@@ -6,7 +6,10 @@
 <ion-content>
   <div class="affinities">
     <ion-chip *ngFor="let affinity of totalAffinities" (click)="affinityClicked(affinity)" [ngClass]="{selected: affinity.selected, unselected: !affinity.selected}">
-      <ion-label>{{affinity.name}}</ion-label>
+      <ion-label>
+        <p>{{affinity.name}}</p>
+        <p class="hiddenLabel">{{affinity.name}}</p>
+      </ion-label>
     </ion-chip>
   </div>
 </ion-content>

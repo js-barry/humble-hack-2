@@ -1,7 +1,10 @@
 <ion-content>
   <div class="header">
+    <!-- <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar> -->
     <div class="profilePic">
-      <img id="profilePic" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/p/4/005/09b/3bc/0724d3f.jpg">
+      <img id="profilePic" src="../../assets/imgs/anmishra.png">
     </div>
     <table>
       <tbody>
@@ -9,17 +12,17 @@
           <td>
             <p id="subHeader">Rank</p>
             <p>
-              <span>{{userPoints?.personal}}</span> of
-              <span>{{userPoints?.getTotal()}}</span>
+              <span>{{userRank?.getRank()}}</span> of
+              <span>{{userRank?.getTotal()}}</span>
             </p>
           </td>
           <td class="middle">
-            <p class="name">{{user?.id}}</p>
+            <p class="name">{{user?.getInfo().getName()}}</p>
           </td>
           <td>
             <p id="subHeader">Score</p>
             <p>
-              <span> {{user?.info.score}}</span> points</p>
+              <span> {{user?.getInfo().getScore().getPoints()}}</span> points</p>
           </td>
         </tr>
       </tbody>
@@ -35,6 +38,6 @@
     </div>
   </div>
   <div class="startButton">
-    <button ion-button block color="secondary">Start</button>
+    <button ion-button block color="secondary" (click)="startGame();">Start</button>
   </div>
 </ion-content>

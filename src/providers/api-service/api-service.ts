@@ -26,10 +26,9 @@ export class ApiServiceProvider {
   }
 
   post(path: string, body: Object = {}): Observable<any> {
+    let postUrl = this.endpoint + path;
     return this.http.post(
-        path,
-        JSON.stringify(body))
-        .map((res: Response) => res.json());
+      postUrl,
+      JSON.stringify(body));
   }
-
 }

@@ -4,9 +4,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 
 import { PlacesPopoverPage } from '../places-popover/places-popover';
-import {Destination} from "../../models/destination";
+import { Destination } from "../../models/destination";
 
-
+import { UserProvider } from '../../providers/user/user';
 
 /**
  * Generated class for the PlacesPage page.
@@ -21,8 +21,14 @@ import {Destination} from "../../models/destination";
   templateUrl: 'places.html',
 })
 export class PlacesPage {
+  userCities: any[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public userProvider: UserProvider) {
+    this.userCities = new Array();
+    this.userProvider = userProvider;
+    userProvider.currentUser.getInfo().getCities().forEach((city) => {
+      this.userCities.push(userProvider.cities.get(Number.parseInt(city)));
+    });
   }
 
 
@@ -33,13 +39,20 @@ export class PlacesPage {
   presentPlacesChooserModal() {
     //const profileModal = this.modalCtrl.create(Profile, { userId: 8675309 });
     const placesChooser = this.modalCtrl.create(PlacesPopoverPage,
-        {userDestinations: [new Destination(1, "montreal", "montreal url", false)]});
+      { userDestinations: [new Destination(1, "montreal", "montreal url", false)] });
 
-    placesChooser.onDidDismiss(data => {
-      console.log(data);
+    placesChooser.onDidDismiss((data: any[]) => {
+      let cities = new Array<string>();
+      this.userCities = new Array();
+      data.forEach((element) => {
+        cities.push(element.id);
+        this.userCities.push(this.userProvider.cities.get(Number.parseInt(element.id)));
+      });
+
+      this.userProvider.postCities(cities).subscribe((value) => {
+        this.userProvider.currentUser.getInfo().setCities(cities);
+      });
     });
-
     placesChooser.present();
   }
-
 }

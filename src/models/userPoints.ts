@@ -1,14 +1,14 @@
 export class UserPoints {
-    public personal: number;
+    public rank: number;
     public total: number;
 
     constructor(jsonObj: any) {
-        this.personal = jsonObj.personal;
+        this.rank = jsonObj.rank;
         this.total = jsonObj.total;
     }
 
-    public getPersonal(): number {
-        return this.personal;
+    public getRank(): number {
+        return this.rank;
     }
 
     public getTotal(): number {
