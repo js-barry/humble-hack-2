@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
 import {ApiServiceProvider} from "../../providers/api-service/api-service";
 import {User} from "../../models/user";
+import {NavigationPage} from "../navigation/navigation";
 
 /**
  * Generated class for the GamePage page.
@@ -21,6 +22,8 @@ export class GamePage {
   features: any[];
   cityId : number[];
   cityName : string;
+  navigationPage = NavigationPage;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiService : ApiServiceProvider,
   private modalCtrl : ModalController, public viewCtrl: ViewController) {

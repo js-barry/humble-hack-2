@@ -44,7 +44,7 @@
     </div>
 
     <div style="display: flex; flex: 1; justify-content: center" class="addPlaceButton bottomButtons bottomButtons2">
-        <button ion-button outline icon-left small (click)="done();">
+        <button ion-button outline icon-left small [navPush]="navigationPage">
             Finished for now!
         </button>
 
