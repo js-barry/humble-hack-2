@@ -19,10 +19,10 @@ export class UserProvider {
 
   constructor(private apiServiceProvider: ApiServiceProvider) {
     this.cities = new Map();
-    this.cities.set(4005, { name: "Montreal", url: "../../assets/imgs/montreal.jpg" });
-    this.cities.set(3121, { name: "Seattle", url: "../../assets/imgs/seattle.jpg" });
-    this.cities.set(829, { name: "Chicago", url: "../../assets/imgs/chicago.jpg" });
-    this.cities.set(2114, { name: "London", url: "../../assets/imgs/london.jpg" });
+    this.cities.set(4005, { name: "Montreal", url: "assets/imgs/montreal.jpg" });
+    this.cities.set(3121, { name: "Seattle", url: "assets/imgs/seattle.jpg" });
+    this.cities.set(829, { name: "Chicago", url: "assets/imgs/chicago.jpg" });
+    this.cities.set(2114, { name: "London", url: "assets/imgs/london.jpg" });
 
     apiServiceProvider.get('/users/anmishra/').subscribe(data => {
       this.currentUser = new User(data);

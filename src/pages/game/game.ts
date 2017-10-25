@@ -44,19 +44,19 @@ export class GamePage {
   }
   
   nextQuestion() {
-    this.apiService.post("/users/anmishra/answer", {
-      "city": "4005",
-          "affinity": this.affinity,
-          "features": {
-        "12345": 1,
-            "9999999": 0,
-            "323984293482934845445323423423": 0,
-            "29381293823": 0,
-            "34293842934829384293482342": 1
-      }
-    }).subscribe(res => {
+
+    var choices:any = {};
+    choices.city = this.cityId;
+    choices.affinity = this.affinity;
+    choices.features = {};
+    this.features.forEach(feature => {
+      choices.features[feature.id] = feature.selected ? 1 : 0;
+    });
+
+    this.apiService.post("/users/anmishra/answer", choices).subscribe(res => {
       this.navCtrl.push(GamePage)
     });
+
   }
 
   toggleSelected (feature) {
