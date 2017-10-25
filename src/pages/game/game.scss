@@ -1,0 +1,62 @@
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    max-height: 200px;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: ghostwhite;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: ghostwhite;
+  }
+
+  .floating-button {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    color: greenyellow;
+  }
+
+  .selected {
+    background-color: #FFC60B;
+  }
+
+  .unselected {
+    background-color: #ffffff;
+  }
+
+  .closeButton {
+    width:100%;
+    background-color:transparent;
+    position:fixed;
+    bottom:20px;
+    left:0px;
+    text-align:center;
+  }
+
+  .addPlaceButton {
+    position: absolute;
+    bottom: 60px;
+    left: 30%;
+    width: 40%;
+    z-index: 1;
+    button {
+      background-color: color($colors, light);
+    }
+  }
+}
+
