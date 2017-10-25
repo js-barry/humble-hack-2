@@ -1,6 +1,12 @@
 page-login {
     background-color:color($colors, primary);
-    padding-top:37.5%;
+    padding-top:10%;
+
+    .logo {
+        margin:0px auto;
+        width:40%;
+    }
+
     body {
 	background: #DCDDDF;
 	color: #000;
