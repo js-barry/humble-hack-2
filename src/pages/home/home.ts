@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { UserPoints } from '../../models/userPoints';
-import {IonicPage, NavController, ModalController} from 'ionic-angular';
-import { UserProvider } from "../../providers/user/user";
-import { ApiServiceProvider } from "../../providers/api-service/api-service";
-import {IonicPage, NavController, ModalController} from 'ionic-angular';
+import { IonicPage, NavController, ModalController } from 'ionic-angular';
 import { UserProvider } from "../../providers/user/user";
 import {GamePage} from "../game/game";
 
@@ -82,6 +79,7 @@ export class HomePage {
       return "notAchieved"
     }
   }
+
   startGame() {
     const gamePage = this.modalCtrl.create(GamePage, {user: this.user})
 

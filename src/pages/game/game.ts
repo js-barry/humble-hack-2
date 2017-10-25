@@ -45,12 +45,16 @@ export class GamePage {
   
   nextQuestion() {
     
-    this.viewCtrl.dismiss();
-    this.modalCtrl.create(GamePage);
+    //this.viewCtrl.dismiss();
+    this.navCtrl.push(GamePage)
   }
 
   toggleSelected (feature) {
-    feature.selected = true;
+    if (feature.selected && feature.selected === true) {
+      feature.selected = false;
+    } else {
+      feature.selected = true;
+    }
   }
 
 }
