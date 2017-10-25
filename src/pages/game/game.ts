@@ -44,9 +44,19 @@ export class GamePage {
   }
   
   nextQuestion() {
-    
-    //this.viewCtrl.dismiss();
-    this.navCtrl.push(GamePage)
+    this.apiService.post("/users/anmishra/answer", {
+      "city": "4005",
+          "affinity": this.affinity,
+          "features": {
+        "12345": 1,
+            "9999999": 0,
+            "323984293482934845445323423423": 0,
+            "29381293823": 0,
+            "34293842934829384293482342": 1
+      }
+    }).subscribe(res => {
+      this.navCtrl.push(GamePage)
+    });
   }
 
   toggleSelected (feature) {
@@ -55,6 +65,14 @@ export class GamePage {
     } else {
       feature.selected = true;
     }
+  }
+  
+  done() {
+    this.viewCtrl.dismiss();
+  }
+
+  skip() {
+    this.navCtrl.push(GamePage);
   }
 
 }
