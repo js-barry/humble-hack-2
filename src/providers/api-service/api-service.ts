@@ -17,7 +17,7 @@ export class ApiServiceProvider {
   constructor(public http: HttpClient) {
     console.log('Hello ApiServiceProvider Provider');
 
-    this.endpoint = 'https://5z4govvk81.execute-api.us-east-1.amazonaws.com/Prod'
+    this.endpoint = 'https://r9gds0ycdb.execute-api.us-east-1.amazonaws.com/Prod';
   }
 
 
